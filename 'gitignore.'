@@ -1,0 +1,9 @@
+.vs/
+*.user
+*.suo
+*.vspscc
+*.vssscc
+*.cache
+*.dbmdl
+*.log
+*.vsidx
