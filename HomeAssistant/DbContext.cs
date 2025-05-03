@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HomeAssistant.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace HomeAssistant
@@ -10,6 +11,6 @@ namespace HomeAssistant
         public DbSet<User> Users { get; set; }
         public DbSet<Device> Devices { get; set; }
         public DbSet<Room> Rooms { get; set; }
-      
+        public DbSet<OtpEntry> OtpEntries { get; set; }
     }
 }

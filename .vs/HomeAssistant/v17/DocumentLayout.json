@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\models\\otpentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\models\\otpentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\services\\otpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\services\\otpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\dtos\\otpverificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\dtos\\otpverificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|c:\\users\\t-box\\source\\repos\\homeassistant\\homeassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA204004-BBC4-4196-8BC6-232D563BD714}|HomeAssistant\\HomeAssistant.csproj|solutionrelative:homeassistant\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Models\\User.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Models\\User.cs",
+              "RelativeToolTip": "HomeAssistant\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T08:18:38.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\DbContext.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\DbContext.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\DbContext.cs",
+              "RelativeToolTip": "HomeAssistant\\DbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T06:34:39.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OtpEntry.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Models\\OtpEntry.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Models\\OtpEntry.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Models\\OtpEntry.cs",
+              "RelativeToolTip": "HomeAssistant\\Models\\OtpEntry.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwAwAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T07:53:48.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OtpVerificationDto.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\DTOs\\OtpVerificationDto.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\DTOs\\OtpVerificationDto.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\DTOs\\OtpVerificationDto.cs",
+              "RelativeToolTip": "HomeAssistant\\DTOs\\OtpVerificationDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T06:31:24.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OtpService.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Services\\OtpService.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Services\\OtpService.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Services\\OtpService.cs",
+              "RelativeToolTip": "HomeAssistant\\Services\\OtpService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAqwA4AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T05:52:33.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Services\\EmailService.cs",
+              "RelativeToolTip": "HomeAssistant\\Services\\EmailService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T05:48:43.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\DTOs\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\DTOs\\RegisterUserDto.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\DTOs\\RegisterUserDto.cs",
+              "RelativeToolTip": "HomeAssistant\\DTOs\\RegisterUserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T05:46:48.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Program.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Program.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Program.cs",
+              "RelativeToolTip": "HomeAssistant\\Program.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAAB8AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T12:33:21.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Services\\UserService.cs",
+              "RelativeToolTip": "HomeAssistant\\Services\\UserService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAmwBcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T15:42:10.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "HomeAssistant\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\Controllers\\UserController.cs",
+              "RelativeToolTip": "HomeAssistant\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAWwEgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T12:25:24.542Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

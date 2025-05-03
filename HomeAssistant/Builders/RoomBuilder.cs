@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HomeAssistant.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HomeAssistant.Builders
 {

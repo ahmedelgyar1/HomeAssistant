@@ -1,10 +1,8 @@
 ﻿namespace HomeAssistant.DTOs
 {
-    public class DeviceDto
+    public class DeviceControlDto
     {
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public bool Status { get; set; }
+        public string EntityId { get; set; } 
     }
 
 }

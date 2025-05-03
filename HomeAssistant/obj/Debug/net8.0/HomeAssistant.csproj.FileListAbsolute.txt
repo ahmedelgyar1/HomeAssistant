@@ -168,3 +168,9 @@ C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\obj\Debug\net8.0\refint\
 C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\obj\Debug\net8.0\HomeAssistant.pdb
 C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\obj\Debug\net8.0\HomeAssistant.genruntimeconfig.cache
 C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\obj\Debug\net8.0\ref\HomeAssistant.dll
+C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\obj\Debug\net8.0\HomeAssistant.sourcelink.json
+C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\bin\Debug\net8.0\MailKit.dll
+C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\bin\Debug\net8.0\MimeKit.dll
+C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\T-BOX\source\repos\HomeAssistant\HomeAssistant\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

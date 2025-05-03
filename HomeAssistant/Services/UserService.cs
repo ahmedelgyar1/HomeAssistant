@@ -1,27 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HomeAssistant.Models;
+using MailKit.Net.Smtp;
+using Microsoft.EntityFrameworkCore;
+using MimeKit;
 
 namespace HomeAssistant.Services
 {
     public class UserService
     {
         private readonly AppDbContext _context;
+        private IConfiguration _config;
 
-        public UserService(AppDbContext context)
+        public UserService(AppDbContext context, IConfiguration config )
         {
             _context = context;
+            _config=config;
+        }
+        
+        public async Task<bool> IsEmailRegisteredAsync(string email)
+        {
+            return await _context.Users.AnyAsync(u => u.Email == email);
         }
 
-        public async Task<bool> RegisterUserAsync(User user)
+        public async Task AddUserAsync(User user)
         {
-            
-            if (await _context.Users.AnyAsync(u => u.Email == user.Email))
-                return false;
-
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-            return true;
         }
-
         public async Task<User?> LoginAsync(string email, string password)
         {
             return await _context.Users
