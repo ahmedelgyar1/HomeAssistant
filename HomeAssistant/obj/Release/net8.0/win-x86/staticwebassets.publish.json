@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ChgUt7GlKDwBMk9Q0wTkP33FoW4QUiPBzNvCVp3auJE=",
+  "Source": "HomeAssistant",
+  "BasePath": "_content/HomeAssistant",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

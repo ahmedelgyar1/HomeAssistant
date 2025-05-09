@@ -21,8 +21,17 @@ namespace HomeAssistant
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
     });
             builder.Services.AddDbContext<AppDbContext>(options =>
-           options.UseSqlServer("Data source= DESKTOP-S2PU99M\\SQLSERVER;Initial catalog =HomeAssistant;Integrated security = true;TrustServerCertificate=True"));
-            
+           options.UseSqlServer("Server=db18834.public.databaseasp.net; Database=db18834; User Id=db18834; Password=Lp5#@Xc8m+6B; Encrypt=False; MultipleActiveResultSets=True;"));
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
+            });
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<DeviceService>();
@@ -31,16 +40,15 @@ namespace HomeAssistant
             builder.Services.AddScoped<EmailService>();
             builder.Services.AddScoped<UserService>();
             var configuration = builder.Configuration;
-
+         
             var app = builder.Build();
-
+            app.UseCors("AllowAll");
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

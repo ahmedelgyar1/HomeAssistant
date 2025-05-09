@@ -5441,11 +5441,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\HomeAssistant.csproj",
+      "projectUniqueName": "D:\\HomeAssistant\\HomeAssistant\\HomeAssistant.csproj",
       "projectName": "HomeAssistant",
-      "projectPath": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\HomeAssistant.csproj",
+      "projectPath": "D:\\HomeAssistant\\HomeAssistant\\HomeAssistant.csproj",
       "packagesPath": "C:\\Users\\T-BOX\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\obj\\",
+      "outputPath": "D:\\HomeAssistant\\HomeAssistant\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\T-BOX\\AppData\\Roaming\\NuGet\\NuGet.Config",

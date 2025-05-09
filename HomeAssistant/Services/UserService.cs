@@ -31,5 +31,15 @@ namespace HomeAssistant.Services
             return await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
         }
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public async Task UpdateAsync(User user)
+        {
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }

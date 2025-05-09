@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rdp15pdPPqs=",
+  "dgSpecHash": "eL6K3kLlcCw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\T-BOX\\source\\repos\\HomeAssistant\\HomeAssistant\\HomeAssistant.csproj",
+  "projectFilePath": "D:\\HomeAssistant\\HomeAssistant\\HomeAssistant.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\T-BOX\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\T-BOX\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
