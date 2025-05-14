@@ -1,133 +1,101 @@
 ﻿using HomeAssistant.DTOs;
+using HomeAssistant.Models;
+using HomeAssistant.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Http;
-using System.Net.WebSockets;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace YourNamespace.Controllers
+[ApiController]
+[Route("api/[controller]")]
+public class HomeAssistantController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class HomeAssistantController : ControllerBase
+    private readonly HttpClient _httpClient;
+    private readonly IConfiguration _configuration;
+    private readonly DeviceService _deviceService;
+
+    public HomeAssistantController( IHttpClientFactory httpClientFactory, IConfiguration configuration,DeviceService deviceService)
     {
-        private readonly HttpClient _httpClient;
-        private readonly IConfiguration _configuration;
+        _httpClient = httpClientFactory.CreateClient();
+        _configuration = configuration;
+        _deviceService = deviceService;
 
-        public HomeAssistantController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
-        {
-            _httpClient = httpClientFactory.CreateClient();
-            _configuration = configuration;
-
-            var baseUrl = configuration["HomeAssistant:BaseUrl"];
-            var accessToken = configuration["HomeAssistant:AccessToken"];
-
-            _httpClient.BaseAddress = new Uri(baseUrl);
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
-        }
-
-        [HttpPost("turn-on")]
-        public async Task<IActionResult> TurnOnDevice([FromBody] DeviceControlDto dto)
-        {
-            var json = $"{{\"entity_id\":\"{dto.EntityId}\"}}";
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await _httpClient.PostAsync("api/services/homeassistant/turn_on", content);
-
-            if (response.IsSuccessStatusCode)
-                return Ok($"{dto.EntityId} turned on successfully");
-            else
-                return StatusCode((int)response.StatusCode, $"Failed to turn on {dto.EntityId}");
-        }
-
-        [HttpPost("turn-off")]
-        public async Task<IActionResult> TurnOffDevice([FromBody] DeviceControlDto dto)
-        {
-            var json = $"{{\"entity_id\":\"{dto.EntityId}\"}}";
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await _httpClient.PostAsync("api/services/homeassistant/turn_off", content);
-
-            if (response.IsSuccessStatusCode)
-                return Ok($"{dto.EntityId} turned off successfully");
-            else
-                return StatusCode((int)response.StatusCode, $"Failed to turn off {dto.EntityId}");
-        }
-        [HttpGet("devices")]
-        public async Task<IActionResult> GetDevices()
-        {
-            var accessToken = _configuration["HomeAssistant:AccessToken"];
-            var baseUrl = _configuration["HomeAssistant:BaseUrl"];
-
-            if (string.IsNullOrEmpty(baseUrl) || string.IsNullOrEmpty(accessToken))
-                return BadRequest("Home Assistant configuration is missing.");
-
-            var wsUri = baseUrl.Replace("https://", "wss://").TrimEnd('/') + "/api/websocket";
-
-            using var socket = new ClientWebSocket();
-
-            try
-            {
-                await socket.ConnectAsync(new Uri(wsUri), CancellationToken.None);
-
-                var buffer = new byte[8192];
-
-                await ReceiveFullMessage(socket, buffer); // auth_required
-                await Send(socket, $"{{ \"type\": \"auth\", \"access_token\": \"{accessToken}\" }}");
-                await ReceiveFullMessage(socket, buffer); // auth_ok
-
-                var deviceRequest = new
-                {
-                    id = 1,
-                    type = "config/device_registry/list"
-                };
-
-                var jsonRequest = JsonSerializer.Serialize(deviceRequest);
-                await Send(socket, jsonRequest);
-
-                var jsonResponse = await ReceiveFullMessage(socket, buffer);
-
-                var parsed = JsonDocument.Parse(jsonResponse);
-
-                if (parsed.RootElement.TryGetProperty("result", out var result))
-                {
-                    return Ok(result);
-                }
-
-                return BadRequest("Failed to retrieve devices.");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error connecting to Home Assistant: {ex.Message}");
-            }
-        }
-        private async Task<string> ReceiveFullMessage(ClientWebSocket socket, byte[] buffer)
-        {
-            var result = new WebSocketReceiveResult(0, WebSocketMessageType.Text, false);
-            var fullMessage = new StringBuilder();
-
-            do
-            {
-                result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                fullMessage.Append(Encoding.UTF8.GetString(buffer, 0, result.Count));
-            }
-            while (!result.EndOfMessage);
-
-            return fullMessage.ToString();
-        }
-
-
-        private async Task Send(ClientWebSocket socket, string message)
-        {
-            var bytes = Encoding.UTF8.GetBytes(message);
-            await socket.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, CancellationToken.None);
-        }
-
-        private async Task<string> Receive(ClientWebSocket socket, byte[] buffer)
-        {
-            var result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-            return Encoding.UTF8.GetString(buffer, 0, result.Count);
-        }
+        var baseUrl = configuration["HomeAssistant:BaseUrl"];
+        var accessToken = configuration["HomeAssistant:AccessToken"];
+        _httpClient.BaseAddress = new Uri(baseUrl);
+        _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
     }
+
+
+    [HttpPost("turn-on")]
+    public async Task<IActionResult> TurnOnDevice([FromBody] DeviceControlDto dto)
+    {
+        var json = $"{{\"entity_id\":\"{dto.EntityId}\"}}";
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = await _httpClient.PostAsync("api/services/homeassistant/turn_on", content);
+
+        if (response.IsSuccessStatusCode)
+            return Ok($"{dto.EntityId} turned on successfully");
+        else
+            return StatusCode((int)response.StatusCode, $"Failed to turn on {dto.EntityId}");
+    }
+
+    [HttpPost("turn-off")]
+    public async Task<IActionResult> TurnOffDevice([FromBody] DeviceControlDto dto)
+    {
+        var json = $"{{\"entity_id\":\"{dto.EntityId}\"}}";
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = await _httpClient.PostAsync("api/services/homeassistant/turn_off", content);
+
+        if (response.IsSuccessStatusCode)
+            return Ok($"{dto.EntityId} turned off successfully");
+        else
+            return StatusCode((int)response.StatusCode, $"Failed to turn off {dto.EntityId}");
+    }
+    [HttpGet("Get-Devices")]
+    public async Task<IActionResult> GetAllStates()
+    {
+        var response = await _httpClient.GetAsync("api/states");
+
+        if (!response.IsSuccessStatusCode)
+            return StatusCode((int)response.StatusCode, "Failed to retrieve Devices");
+
+        var jsonString = await response.Content.ReadAsStringAsync();
+
+        var states = JsonSerializer.Deserialize<List<Device>>(jsonString, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+
+        return Ok(states);
+    }
+
+    [HttpPost("add-device-to-room")]
+    public async Task<IActionResult> AddDevice([FromBody] AddDeviceToRoomDto dto)
+    {
+        var result = await _deviceService.AddDeviceAsync(dto);
+
+        if (result == null)
+            return NotFound($"Room with Name {dto.RoomName} not found.");
+
+        return Ok(new
+        {
+            message = "Device added to room successfully.",
+            deviceId = result.Id
+        });
+    }
+
+    [HttpGet("room/name/{roomName}/devices")]
+    public async Task<IActionResult> GetDevicesByRoomName(string roomName)
+    {
+        var devices = await _deviceService.GetDevicesByRoomNameAsync(roomName);
+
+        if (devices == null || !devices.Any())
+            return NotFound($"No devices found for room with name '{roomName}'");
+
+        return Ok(devices);
+    }
+
+
 }

@@ -1,59 +1,34 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using HomeAssistant.DTOs;
-//using HomeAssistant.Builders; 
-//namespace HomeAssistant.Controllers
-//{
-//    [ApiController]
-//    [Route("api/[controller]")]
-//    public class RoomController : ControllerBase
-//    {
-//        private readonly AppDbContext _context;
+﻿using HomeAssistant.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
-//        public RoomController(AppDbContext context)
-//        {
-            
-//            _context = context;
-//        }
+namespace HomeAssistant.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class RoomController : ControllerBase
+    {
+        private readonly RoomService _roomService;
 
-//        [HttpPost("Add Room")]
-//        public async Task<IActionResult> AddRoom([FromBody] RoomDto roomDto)
-//        {
-//            var roomBuilder = new RoomBuilder(_context);
+        public RoomController(RoomService roomService)
+        {
+            _roomService = roomService;
+        }
 
-//            roomBuilder.WithName(roomDto.Name);
+        [HttpPost("add")]
+        public async Task<IActionResult> AddRoom([FromBody] string name)
+        {
+            var room = await _roomService.AddRoomAsync(name);
+            return Ok(new { message = "Room added successfully", room });
+        }
 
-//            if (roomDto.Devices != null)
-//            {
-//                foreach (var deviceDto in roomDto.Devices)
-//                {
-//                    var device = new Device
-//                    {
-//                        Name = deviceDto.Name,
-//                        Type = deviceDto.Type,
-//                        Status = deviceDto.Status
-//                    };
-
-//                    roomBuilder.AddDevice(device);
-//                }
-//            }
-
-//            if (roomDto.Cameras != null)
-//            {
-//                foreach (var cameraDto in roomDto.Cameras)
-//                {
-//                    var camera = new CameraStream
-//                    {
-//                        Name = cameraDto.Name,
-//                        Url = cameraDto.Url
-//                    };
-
-//                    roomBuilder.AddCamera(camera);
-//                }
-//            }
-
-//            var room = await roomBuilder.BuildAndSaveAsync();
-//            return Ok(room);
-//        }
-//    }
-
-//}
+        [HttpDelete("delete/{Name}")]
+        public async Task<IActionResult> DeleteRoom(string Name)
+        {
+            var deleted = await _roomService.DeleteRoomAsync(Name);
+            if (!deleted)
+                return NotFound($"Room with Name {Name} not found.");
+            return Ok(new { message = "Room deleted successfully" });
+        }
+    }
+}

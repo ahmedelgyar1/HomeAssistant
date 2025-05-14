@@ -1,6 +1,7 @@
 using HomeAssistant.Controllers;
 using Microsoft.EntityFrameworkCore;
 using HomeAssistant.Services;
+using System.Net.Http.Headers;
 
 
 namespace HomeAssistant
@@ -34,11 +35,20 @@ namespace HomeAssistant
             });
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddSingleton<DeviceService>();
+            builder.Services.AddHttpClient<MLService>()
+     .ConfigurePrimaryHttpMessageHandler(() =>
+     {
+         return new HttpClientHandler
+         {
+             ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+         };
+     });
+            builder.Services.AddScoped<DeviceService>();
             builder.Services.AddScoped<RoomService>();
             builder.Services.AddScoped<OtpService>();
             builder.Services.AddScoped<EmailService>();
             builder.Services.AddScoped<UserService>();
+
             var configuration = builder.Configuration;
          
             var app = builder.Build();

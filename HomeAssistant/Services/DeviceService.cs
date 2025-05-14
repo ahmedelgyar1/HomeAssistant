@@ -1,29 +1,68 @@
-﻿using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+﻿using HomeAssistant.DTOs;
+using HomeAssistant.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+
 namespace HomeAssistant.Services
 {
     public class DeviceService
     {
-        private readonly HttpClient _client;
-
-        public DeviceService()
+        private readonly AppDbContext _context;
+        private readonly HttpClient _httpClient;
+        private readonly IConfiguration _configuration;
+        public DeviceService(
+            IHttpClientFactory httpClientFactory,IConfiguration configuration,AppDbContext context)
         {
-            _client = new HttpClient();
-            _client.BaseAddress = new Uri("http://192.168.1.13:8123/");
-            _client.DefaultRequestHeaders.Add("Authorization", "Bearer YOUR_LONG_LIVED_ACCESS_TOKEN");
+            _httpClient = httpClientFactory.CreateClient();
+            _configuration = configuration;
+            _context = context;
+
+            var baseUrl = _configuration["HomeAssistant:BaseUrl"];
+            var accessToken = _configuration["HomeAssistant:AccessToken"];
+
+            _httpClient.BaseAddress = new Uri(baseUrl);
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
         }
 
-        public async Task TurnOffTVAsync()
-        {
-            var json = "{\"entity_id\":\"media_player.50_crystal_uhd\"}";
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await _client.PostAsync("api/services/media_player/turn_off", content);
-            response.EnsureSuccessStatusCode();
+        public async Task<Device?> AddDeviceAsync(AddDeviceToRoomDto dto)
+        {
+             var room = await _context.Rooms.FirstOrDefaultAsync(r => r.Name.ToLower() == dto.RoomName.ToLower());
+
+            if (room == null)
+            {
+              
+                room = await _context.Rooms.FirstOrDefaultAsync(r => r.Name == "Default Room");
+
+                if (room == null)
+                {
+                   
+                    room = new Room { Name = "Default Room" };
+                    _context.Rooms.Add(room);
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            var device = new Device
+            {
+                EntityId = dto.EntityId,
+                CurrentState = dto.State,
+                Room = room
+            };
+
+            _context.Devices.Add(device);
+            await _context.SaveChangesAsync();
+
+            return device;
         }
 
+
+        public async Task<List<Device>> GetDevicesByRoomNameAsync(string roomName)
+        {
+            return await _context.Devices
+                .Where(d => d.Room.Name.ToLower() == roomName.ToLower())
+                .ToListAsync();
+        }
 
     }
 }

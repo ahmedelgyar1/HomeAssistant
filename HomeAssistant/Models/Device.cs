@@ -4,13 +4,15 @@ namespace HomeAssistant.Models
 {
     public class Device
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public bool Status { get; set; }
+        public int Id { get; set; } 
 
+        [JsonPropertyName("entity_id")]
+        public string EntityId { get; set; }
 
-        public Room Room { get; set; }
+        [JsonPropertyName("state")]
+        public string CurrentState { get; set; }
+
+        public Room Room { get; set; } 
 
 
     }

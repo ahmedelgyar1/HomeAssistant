@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeAssistant")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a4fa5c5b5358f3c2597942b0a832fe8e54bf48d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b515b141cbcb04bba4958d00af4396861908880")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeAssistant")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeAssistant")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

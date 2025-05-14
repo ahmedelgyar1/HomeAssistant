@@ -14,5 +14,6 @@ namespace HomeAssistant
         public DbSet<OtpEntry> OtpEntries { get; set; }
         public DbSet<UploadedFile> UploadedFiles { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<LogbookEntry> LogbookEntries { get; set; }
     }
 }
